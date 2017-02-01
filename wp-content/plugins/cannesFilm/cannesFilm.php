@@ -72,7 +72,7 @@ function cannesFilm_column($column){
 function cannesFilm_savepost($post_id, $post){
 
 	// Le champ est défini et le token est bon ?
-	if(!isset($_POST['cannesFilm_content']) || !wp_verify_nonce($_POST['cannesFilm_nonce'], 'press')){
+	if(!isset($_POST['cannesFilm_content']) || !wp_verify_nonce($_POST['cannesFilm_nonce'], 'cannesFilm')){
 		return $post_id;
 	}
 
@@ -84,6 +84,18 @@ function cannesFilm_savepost($post_id, $post){
 
 	// On met à jour la meta !
 		wp_insert_post($_POST['cannesFilm_content']);
+}
+
+/**
+* Permet d'afficher le rating d'un film
+**/
+function cannesFilm_rate($rating, $number) {
+  $args = array(
+   'rating' => $rating,
+   'type' => 'rating',
+   'number' => $number,
+  );
+  wp_star_rating($args);
 }
 
 /**
