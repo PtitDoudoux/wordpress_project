@@ -60,10 +60,9 @@ header{
 ?>
 <div class="container">
 <div id="creemsonPortfolio"  style="margin-top: 100px;">
-<?php //var_dump($loop); ?>
+
 <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
 	<?php $creemsonPost = get_post(); 
-	//var_dump($creemsonPost);
 	?>
 
     <div class="col-md-4 col-sm-6 col-xs-12 col-lg-3 creemsonPost">

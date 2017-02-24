@@ -12,7 +12,7 @@ Template Name: One page
 
 	/* -----------CREATION DE SECTION POUR LES PAGES DANS LE MENU PRINCIPAL--------------*/
 	$menu_items = wp_get_nav_menu_items('main-nav');
-	//var_dump($menu_items);
+	
 	if( $menu_items ) {
 		foreach ($menu_items as $menu_item ) {
 			$title = sanitize_title($menu_item->title);
@@ -57,23 +57,16 @@ Template Name: One page
 						<span class='subTitle'>".get_option('subTitleWork')."</span> 
 					";
 					creemsonslider_show();
-					//creemsonportfolio_show();
+					creemsonportfolio_show();
 					;
-				}elseif($title == "Films") {
+				}else
+				if($title == "Films") {
 					echo "
 						<div class='parallax-overlay parallax-overlay-3'></div>
 						<div class='parallax-title'></div>
 						<h1 class='section_".$title."'>".get_option('selectFilms')." ".$title." ".get_option('selectFilms')."</h1>
 						<div class='sep'></div>
 						<span class='subTitle'>".get_option('subTitleFilms')."</span> 
-					";
-				}elseif ($title == "Advertising") {
-					echo "
-						<div class='parallax-overlay parallax-overlay-3'></div>
-						<div class='parallax-title'></div>
-						<h1 class='section_".$title."'>".get_option('selectAdvertising')." ".$title." ".get_option('selectAdvertising')."</h1>
-						<div class='sep'></div>
-						<span class='subTitle'>".get_option('subTitleAdvertising')."</span> 
 					";
 				}elseif ($title == "Press") {
 					echo "
@@ -82,6 +75,8 @@ Template Name: One page
 						<div class='sep'></div>
 						<span class='subTitle'>".get_option('subTitlePress')."</span> 
 					";
+					press_show();
+
 				}elseif ($title == "Biography") {
 					echo "
 						<div class='overlay_bio'></div>

@@ -3,12 +3,14 @@
 Plugin Name: CreemsonSlider
 Description : 
 Version : 0.1
-Author : Creemson
+Author : Creemson (Singh Gurnavdeep)
 */
 ?>
 <?php
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 /*
+//This class wasn't implementing well with our existing code, so we withdraw it...badluck
+
 class Creemson_Slider
 {
     public function __construct()
@@ -53,8 +55,8 @@ new Creemson_Slider();
     		));
         //ajoute la fonction image à la une
         add_theme_support( 'post-thumbnails' ); 
+
         //ajoute une taille d'image par défaut
-        //add_image_size('thumb_slide',50,50,true);
         add_image_size('slider','',500,true);
     }
 
@@ -109,8 +111,7 @@ new Creemson_Slider();
     *gere la sauvegarde de la metabox
     */
     function creemsonslider_savepost($post_id, $post){
-       //var_dump($_POST);
-       //var_dump($post);
+
         if(!isset($_POST['creemsonslider_link']) || !wp_verify_nonce($_POST['creemsonslider_nonce'],'creemsonslider')){
             return $post_id;
         }
@@ -136,14 +137,10 @@ new Creemson_Slider();
         wp_enqueue_style('owl-carousel',plugins_url().'/creemsonslider/css/owl-carousel/owl.carousel.css');
         wp_enqueue_style('owl-carousel',plugins_url().'/creemsonslider/css/owl-carousel/owl.theme.css');
         wp_enqueue_style('owl-carousel',plugins_url().'/creemsonslider/css/owl-carousel/owl.transitions.css');
-        //wp_enqueue_style('cremsonslider',plugins_url().'/creemsonslider/css/creemsonslider.css');
-
 
         add_action('wp_footer','creemsonslider_script',30);
 
         include('/wp-content/plugins/creemsonSlider/template.php');
-
-        //var_dump($slides);
     }
 
 
@@ -156,19 +153,17 @@ new Creemson_Slider();
         ?>
         <script type="text/javascript">
             (function($) {
-                //console.log('yo');
                 $("#creemsonslider").owlCarousel({
                     autoHeight : true, 
                     //Default
                     items : 1,
                     itemsCustom : false,
                     itemsDesktop : [479,4],
-                    //itemsDesktopSmall : [980,3],
-                    //itemsTablet: [768,2],
                     itemsTabletSmall: false,
                     itemsMobile : [479,1],
                     singleItem : false,
                     itemsScaleUp : false,
+
                     //navigation
                     navigation : true,
                     navigationText : ["prev","next"],
@@ -185,7 +180,7 @@ new Creemson_Slider();
                     baseClass : "owl-carousel",
                     theme : "owl-theme",
                 });
-                //console.log('yoyo');
+                
              })(jQuery);
         </script>
         <?php

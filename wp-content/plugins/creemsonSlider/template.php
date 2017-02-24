@@ -45,8 +45,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 <script type="text/javascript">
 jQuery(document).ready(function(){
     
-    jQuery('.owl-prev').html('<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>');
-    jQuery('.owl-next').html('<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>');
+    jQuery('.owl-next').html('<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>');
+    jQuery('.owl-prev').html('<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>');
 });
 
 </script>

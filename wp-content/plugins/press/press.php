@@ -3,14 +3,20 @@
 * Plugin Name: press
 * Description: Plugin permettant d'ajouter des photos de magazine de presse.
 * Version: 1.0
-* Author: Kevin Morand
-* Author URI: http://www.morand.paris
+* Author: Singh Gurnavdeep
 */
 
-add_action('init', 'press_init');									// Initialisation de Wordpress
-add_action('save_post', 'press_savepost',10, 2);					// Capture l'édition d'article avec 2 arguments
-add_action('manage_edit-press_columns', 'press_columnfilter');		// Capture la liste des colonnes pour les magazine
-add_action('manage_posts_custom_column', 'press_column');			// Permet d'afficher du contenu en plus pour chaque column
+// Initialisation de Wordpress
+add_action('init', 'press_init');	
+
+// Capture l'édition d'article avec 2 arguments								
+add_action('save_post', 'press_savepost',10, 2);	
+
+// Capture la liste des colonnes pour les magazine				
+add_action('manage_edit-press_columns', 'press_columnfilter');
+		
+// Permet d'afficher du contenu en plus pour chaque column
+add_action('manage_posts_custom_column', 'press_column');			
 
 /**
 * Permet d'initialiser les fonctionalités liées au carrousel

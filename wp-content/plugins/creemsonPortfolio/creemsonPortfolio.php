@@ -3,7 +3,7 @@
 Plugin Name: CreemsonPortfolio
 Description : 
 Version : 0.1
-Author : Creemson
+Author : Creemson (Singh Gurnavdeep)
 */
 ?>
 <?php
@@ -69,55 +69,8 @@ function creemsonportfolio_init() {
 
         wp_enqueue_script('creemsonPortfolio',plugins_url().'/creemsonPortfolio/js/creemsonPortfolio.js', array('jquery'),'1.3.2',true);
 
-        //wp_register_script( 'creemsonPortfolio-js', plugins_url().'/creemsonPortfolio/js/creemsonPortfolio.js' , array('jquery'), '1.3.2', true );
-
-        //wp_enqueue_script( 'creemsonPortfolio-js' );
-        //wp_register_script('creemsonPortfolio',plugins_url().'/creemsonPortfolio/js/creemsonPortfolio.js', array('jquery'),'1.3.2',true);
-
         wp_enqueue_style('creesomportfolio',plugins_url().'/creemsonPortfolio/css/owl-carousel/creesomportfolio.css');
 
 
-
-        //add_action('wp_footer','creemsonportfolio_script',30);
-
         include('/wp-content/plugins/creemsonPortfolio/template.php');
     }
-
-
-/*
-|--------------------------------------------------------------------------
-| FILTERS
-|--------------------------------------------------------------------------
-*/
- 
-//add_filter( 'template_include', 'creemsonPortfolio_template');
- 
-/*
-|--------------------------------------------------------------------------
-| PLUGIN FUNCTIONS
-|--------------------------------------------------------------------------
-*/
- 
-/**
- * Returns template file
- *
- * @since 1.0
- */
- /*
-function creemsonPortfolio_template( $template ) {
- 
-    // Post ID
-    $post_id = get_the_ID();
- 
-    // For all other CPT
-    if ( get_post_type( $post_id ) != 'work' ) {
-        return $template;
-    }
- 
-    // Else use custom template
-    if ( is_single() ) {
-        return rc_tc_get_template_hierarchy( 'single' );
-    }
- 
-}
-*/
