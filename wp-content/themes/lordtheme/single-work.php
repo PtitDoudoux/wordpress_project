@@ -3,9 +3,7 @@
 	#single-work{
 		text-align: center;
 	}
-	/*.work_image img{
-		width: 100%;
-	}*/
+	
 </style>
 <?php if (have_posts()) : while (have_posts()) : the_post();?>
 	<div id="single-work" class="container" style="margin-top:50px;">

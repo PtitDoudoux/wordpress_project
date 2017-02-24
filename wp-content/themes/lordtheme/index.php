@@ -10,7 +10,6 @@
 	</head>
 	<body>
 		<section class="section section">
-			<!-- <h1 class="loading_h1">Waiting to go on the site of Lebee ...</h1> -->
 			<span class="loader loader-circles"></span>
 		</section>
 	</body>

@@ -16,26 +16,6 @@ function menus(){
 }
 add_action('init', 'menus');
 
-//Remplacement du menu par l'hamburger si c'est une plateforme mobile
-// function detectMobile(){
-// 	if(wp_is_mobile()){
-// 		echo "
-// 			<style>
-// 				#menu-main-nav{
-// 					display:none;
-// 				}
-// 			</style>
-// 			<script type='text/javascript'>
-// 				$('.menu-main-nav-container').append('
-// 					<a><i class='fa fa-bars' aria-hidden='true'></i></a>
-// 				');
-// 			</script>
-// 		";
-
-// 	}
-// }
-// add_action('mobile', 'detectMobile');
-
 /* BOOTSTRAP */ 
 function register_css() {
     wp_register_style( 'bootstrap-min', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' );
